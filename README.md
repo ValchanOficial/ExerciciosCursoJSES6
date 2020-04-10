@@ -8,6 +8,7 @@
 
 ## Necessário ter instalado:
 - Node.js + NPM
+- Yarn
 
 ## Executando:
 

@@ -16,5 +16,5 @@
 
 ```javascript
     npm install
-    yarn dev // inicia na porta 8080 - http://localhost:8080/
+    yarn dev // http://localhost:8080/
 ```

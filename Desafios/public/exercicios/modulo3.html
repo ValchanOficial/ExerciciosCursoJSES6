@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios: Módulo 03</title>
+</head>
+    <body>
+        <div>
+            <h3>1º exercício</h3>
+            <p>Transforme os seguintes trechos de código utilizando async/await:</p>
+            <code>
+                // Função delay aciona o .then após 1s<br>
+                const delay = () => new Promise(resolve => setTimeout(resolve, 1000));<br>
+                <br>
+                function umPorSegundo() {<br>
+                    delay().then(() => {<br>
+                        console.log('1s');<br>
+                        delay().then(() => {<br>
+                            console.log('2s');<br>
+                            delay().then(() => {<br>
+                                console.log('3s');<br>
+                            });<br>
+                        })<br>
+                    });<br>
+                }<br>
+                <br>
+                umPorSegundo();<br>
+                <br>
+                import axios from 'axios';<br>
+                <br>
+                function getUserFromGithub(user) {  <br>
+                    axios.get(`https://api.github.com/users/${user}`)<br>
+                    .then(response => {<br>
+                        console.log(response.data);<br>
+                    })<br>
+                    .catch(err => {<br>
+                        console.log('Usuário não existe');<br>
+                    })<br>
+                }<br>
+                <br>
+                getUserFromGithub('diego3g');<br>
+                getUserFromGithub('diego3g124123');<br>
+                <br>
+                class Github {<br>
+                    static getRepositories(repo) {<br>
+                        axios.get(`https://api.github.com/repos/${repo}`)<br>
+                        .then(response => {<br>
+                            console.log(response.data);<br>
+                        })<br>
+                        .catch(err => {<br>
+                            console.log('Repositório não existe');<br>
+                        })<br>
+                    }<br>
+                }<br>
+                <br>
+                Github.getRepositories('rocketseat/rocketseat.com.br');<br>
+                Github.getRepositories('rocketseat/dslkvmskv');<br>
+                <br>
+                const buscaUsuario = usuario => {  <br>
+                    axios.get(`https://api.github.com/users/${user}`)<br>
+                    .then(response => {<br>
+                        console.log(response.data);<br>
+                    })<br>
+                    .catch(err => {<br>
+                        console.log('Usuário não existe');<br>
+                    });<br>
+                }<br>
+                <br>
+                buscaUsuario('diego3g');<br>
+            </code>
+            <div>
+                <h4>Respostas:</h4>
+                <code>
+                    const delay = (sec) => new Promise(resolve => setTimeout(resolve(sec), 1000));<br>
+                    <br>
+                    async function umPorSegundo() {<br>
+                        console.log(await delay('1s'));<br>
+                        console.log(await delay('2s'));<br>
+                        console.log(await delay('3s'));<br>
+                    }<br>
+                    <br>
+                    umPorSegundo();<br>
+                    <br>
+                    import axios from 'axios';<br>
+                    <br>
+                    async function getUserFromGithub(user) { <br> 
+                        try {<br>
+                            const response = await axios.get(`https://api.github.com/users/${user}`);<br>
+                            console.log(response.data);<br>
+                        } catch (error) {<br>
+                            console.log('Usuário não existe');<br>
+                        }<br>
+                    }
+                    <br>
+                    getUserFromGithub('diego3g');<br>
+                    getUserFromGithub('diego3g124123');<br>
+                    <br>
+                    class Github {<br>
+                        static async getRepositories(repo) {<br>
+                            try {<br>
+                                const response = await axios.get(`https://api.github.com/repos/${repo}`);<br>
+                                console.log(response.data);<br>
+                            } catch (error) {<br>
+                                console.log('Repositório não existe');<br>
+                            }<br>
+                        }<br>
+                    }<br>
+                    <br>
+                    Github.getRepositories('rocketseat/rocketseat.com.br');<br>
+                    Github.getRepositories('rocketseat/dslkvmskv');<br>
+                    <br>
+                    const buscaUsuario = async (user) => { <br>
+                        try {<br>
+                            const response = await axios.get(`https://api.github.com/users/${user}`);<br>
+                            console.log(response.data);<br>
+                        } catch (error) {<br>
+                            console.log('Usuário não existe');<br>
+                        }<br>
+                    }<br>
+                    <br>
+                    buscaUsuario('diego3g');<br>
+                </code>
+            </div> 
+        </div>
+    </body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios: Módulo 01</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div>
+        <h3>1º exercício</h3>
+        <p>Para testar seus conhecimentos com classes, 
+            crie uma classe com nome "Admin", essa classe 
+            deve extender uma segunda classe chamada "Usuario". 
+            A classe usuário deve receber dois parâmetros no 
+            método construtor, e-mail e senha, e anotá-los em 
+            propriedades da classe. A classe "Admin" por sua vez 
+            não recebe parâmetros mas deverepassar os 
+            parâmetros de e-mail e senha à classe pai e 
+            marcar uma propriedade "admin" comotrue na classe. 
+            Agora com suas classes formatadas, adicione um método 
+            na classe Usuario chamado isAdmin que retorna se o 
+            usuário é administrador ou não baseado na propriedade 
+            admin ser true ou não.
+        </p>
+        <code>
+            const User1 = new Usuario('email@teste.com', 'senha123');<br>
+            const Adm1 = new Admin('email@teste.com', 'senha123');<br>
+            console.log(User1.isAdmin()) // false<br>
+            console.log(Adm1.isAdmin()) // true<br>
+        </code>
+        <div>
+            <h4>Respostas:</h4>
+            Usuário: <span id="user"></span> <br>
+            Admin: <span id="admin"></span>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <h3>2º exercício</h3>
+        <p>A partir do seguinte vetor e utilizando os métodos de array (map, reduce, filter e find):</p>
+        <code>
+            const usuarios = [<br>
+                { nome: 'Diego', idade: 23, empresa: 'Rocketseat' },<br>
+                { nome: 'Gabriel', idade: 15, empresa: 'Rocketseat' },<br>
+                { nome: 'Lucas', idade: 30, empresa: 'Facebook' },<br>
+            ];<br>
+        </code>
+        <h4>2.1 Utilizando o map</h4>
+        <p>Crie uma variável que contenha todas idades dos usuários: [23, 15, 30]</p>
+        <div>
+            <h4>Respostas:</h4>
+            Idades: <span id="age"></span>
+        </div>
+        <h4>2.2 Utilizando o filter</h4>
+        <p>Crie uma variável que tenha apenas os usuários que trabalham na Rocketseat e com mais de 18 anos:</p>
+        <div>
+            <h4>Respostas:</h4>
+            Usuários que trabalham na Rocketseat: <span id="userRocketseat"></span>
+        </div>
+        <h4>2.3 Utilizando o find</h4>
+        <p>Crie uma variável que procura por um usuário que trabalhe na empresa Google:</p>
+        <div>
+            <h4>Respostas:</h4>
+            Usuário que trabalhe na empresa Google: <span id="userGoogle"></span>
+        </div>
+        <h4>2.4 Unindo operações</h4>
+        <p>Multiplique a idade de todos usuários por dois e depois realize um filtro nos usuários que possuem no máximo 50 anos:</p>
+        <div>
+            <h4>Respostas:</h4>
+            <span id="resultFour"></span>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <h3>3º exercício</h3>
+        <p>Converta as funções nos seguintes trechos de código em Arrow Functions:</p>
+        <div>
+            <h4>3.1</h4>
+            <code>
+                const arr = [1, 2, 3, 4, 5]; <br>
+                arr.map(function(item) {  <br>
+                    return item + 10;<br>
+                });<br>
+            </code>
+            <div>
+                <h4>Respostas:</h4>
+                <code>
+                    const arr = [1, 2, 3, 4, 5];<br>
+                    arr.map(item => item + 10);<br>
+                </code>
+            </div>
+        </div>
+        <div>
+            <h4>3.2<br>
+                // Dica: Utilize uma constante pra function
+            </h4>
+            <code>
+                const usuario = { nome: 'Diego', idade: 23 };<br>
+                function mostraIdade(usuario) {  <br>
+                    return usuario.idade;<br>
+                }<br>
+                mostraIdade(usuario);<br>
+            </code>
+            <div>
+                <h4>Respostas:</h4>
+                <code>
+                    const usuario = { nome: 'Diego', idade: 23 }; <br>
+                    const mostraIdade = (usuario) => {  <br>
+                        return usuario.idade;<br>
+                    }<br>
+                    mostraIdade(usuario); <br>
+                </code>
+            </div>
+        </div>
+        <div>
+            <h4>3.3<br>
+                // Dica: Utilize uma constante pra function
+            </h4>
+            <code>
+                const nome = "Diego"; <br>
+                const idade = 23; <br>
+                function mostraUsuario(nome = 'Diego', idade = 18) { <br>
+                    return { nome, idade }; <br>
+                } <br>
+                mostraUsuario(nome, idade); <br>
+                mostraUsuario(nome); <br>
+            </code>
+            <div>
+                <h4>Respostas:</h4>
+                <code>
+                    const nome = "Diego", idade = 23;<br>
+                    const mostraUsuario = (nome = 'Diego', idade = 18) => { <br>
+                    return { nome, idade }; <br>
+                    } <br>
+                    mostraUsuario(nome, idade); <br>
+                    mostraUsuario(nome); <br>
+                </code>
+            </div>
+        </div>
+        <div>
+            <h4>3.4</h4>
+            <code>
+                const promise = function() {  <br>
+                    return new Promise(function(resolve, reject) {<br>
+                      return resolve();  <br>
+                    })<br>
+                }<br>
+            </code>
+            <div>
+                <h4>Respostas:</h4>
+                <code>
+                    const promise = () => {  <br>
+                        return new Promise((resolve, reject) => {<br>
+                          return resolve();  <br>
+                        })<br>
+                      };<br>
+                </code>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <h3>4º exercício</h3>
+        <div>
+            <h4>4.1 Desestruturação simples</h4>
+            <p>A partir do seguinte objeto:</p>
+            <code>
+                const empresa = {<br>
+                    nome: 'Rocketseat',<br>
+                    endereco: {<br>
+                        cidade: 'Rio do Sul',<br>
+                        estado: 'SC',<br>
+                    }<br>
+                };<br>
+            </code>
+            <p>Utilize a desestruturação para transformar as propriedades nome, cidade e estado em variáveis, nofim deve ser possível fazer o seguinte:</p>
+            <code>
+                console.log(nome); // Rocketseat<br>
+                console.log(cidade); // Rio do Sul<br>
+                console.log(estado); // SC<br>
+            </code>
+            <div>
+                <h4>Respostas:</h4>
+                <code>
+                    const empresa = {<br>
+                        nome: 'Rocketseat',<br>
+                        endereco: {<br>
+                          cidade: 'Rio do Sul'<br>
+                          estado: 'SC',<br>
+                        }<br>
+                      };<br>
+                      const {nome, endereco:{cidade}, endereco:{estado}} = empresa;<br>
+                      console.log(nome);<br>
+                      console.log(cidade);<br>
+                      console.log(estado);<br>
+                </code>
+            </div>
+        </div>
+        <div>
+            <h4>4.2 Desestruturação em parâmetros</h4>
+            <p>Na seguinte função:</p>
+            <code>
+                function mostraInfo(usuario) {<br>
+                    return `${usuario.nome} tem ${usuario.idade} anos.`;<br>
+                }<br>
+                mostraInfo({ nome: 'Diego', idade: 23 })<br>
+            </code>
+            <p>
+                Utilize a desestruturação nos parâmetros da função para buscar o nome e idade do usuário separadamente e a função poder retornar apenas:
+            </p>
+            <code>
+                return `${nome} tem ${idade} anos.`; <br>
+            </code>
+            <div>
+                <h4>Respostas:</h4>
+                <code>
+                    function mostraInfo({nome, idade}) {<br>
+                        return `${nome} tem ${idade} anos.`;<br>
+                      }<br>
+                      mostraInfo({ nome: 'Diego', idade: 23 });<br>
+                </code>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <h3>5º exercício</h3>
+        <p>Utilizando o operador de rest/spread (...) realize as seguintes operações:</p>
+        <div>
+            <h4>5.1 Rest</h4>
+            <p>A partir do array: const arr = [1, 2, 3, 4, 5, 6], defina uma variável x que recebe a primeira posição do vetor e outra variável y que recebe todo restante dos dados.</p>
+            <code>
+                console.log(x); // 1 <br>
+                console.log(y); // [2, 3, 4, 5, 6]<br>
+            </code>
+            <div>
+                <h4>Respostas:</h4>
+                <code>
+                    const arr = [1, 2, 3, 4, 5, 6]<br>
+                    const [x, ...y] = arr;<br>
+                    console.log(x);<br>
+                    console.log(y);<br>
+                </code>
+            </div>
+            <p>
+                Crie uma função que recebe inúmeros parâmetros e retorna a soma de todos eles:
+            </p>
+            <code>
+                // function soma... <br>
+                console.log(soma(1, 2, 3, 4, 5, 6)); // 21<br>
+                console.log(soma(1, 2)); // 3<br>
+            </code>
+            <div>
+                <h4>Respostas:</h4>
+                <code>
+                    const soma = (...valores) => { <br>
+                        return valores.reduce((total, valor) => total + valor);<br>
+                    }<br>
+                    console.log(soma(1, 2, 3, 4, 5, 6));<br>
+                    console.log(soma(1, 2));<br>
+                </code>
+            </div>
+        </div>
+        <div>
+            <h4>5.2 Spread</h4>
+            <p>A partir do objeto e utilizando o operador spread:</p>
+            <code>
+                const usuario = {<br>
+                    nome: 'Diego',<br>
+                    idade: 23,<br>
+                    endereco: {<br>
+                        cidade: 'Rio do Sul',<br>
+                        uf: 'SC',<br>
+                        pais: 'Brasil',<br>
+                    }<br>
+                };<br>
+            </code>
+            <p>Crie uma variável usuario2 que contenha todos os dados do usuário porém com nome Gabriel.</p>
+            <p>Crie uma variável usuario3 que contenha todos os dados do usuário porém com cidade Lontras.</p>
+            <div>
+                <h4>Respostas:</h4>
+                <code>
+                    const usuario = {<br>
+                        nome: 'Diego',<br> 
+                        idade: 23,  <br>
+                        endereco: {<br>
+                          cidade: 'Rio do Sul',<br>
+                          uf: 'SC',<br>
+                          pais: 'Brasil',<br>
+                        }<br>
+                      };<br>
+                      const usuario2 = { ...usuario, nome: 'Gabriel'};<br>
+                      const usuario3 = { ...usuario, endereco:{...usuario.endereco, cidade: "Lontras"}};<br>
+                      console.log(usuario2);<br>
+                      console.log(usuario3);<br>
+                </code>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <h3>6º exercício</h3>
+        <p>Converta o seguinte trecho de código utilizando Template Literals:</p>
+        <code>
+            const usuario = 'Diego'; <br>
+            const idade = 23;<br>
+            console.log('O usuário ' + usuario + ' possui ' + idade + ' anos'); <br>
+        </code>
+        <div>
+            <h4>Respostas:</h4>
+            <code>
+                const usuario = 'Diego'; <br>
+                const idade = 23;<br>
+                console.log('O usuário ' + usuario + ' possui ' + idade + ' anos');<br>
+                console.log(`O usuário ${usuario} possui ${idade} anos`);<br>
+            </code>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <h3>7º exercício</h3>
+        <p>Utilize a sintaxe curta de objetos (Object Short Syntax) no seguinte objeto:</p>
+        <code>
+            const nome = 'Diego'; <br>
+            const idade = 23;<br>
+            const usuario = {  <br>
+                nome: nome,  <br>
+                idade: idade,  <br>
+                cidade: 'Rio do Sul',<br>
+            };<br>
+        </code>
+        <div>
+            <h4>Respostas:</h4>
+            <code>
+                const nome = 'Diego'; <br>
+                const idade = 23;<br>
+                const usuario = {  <br>
+                    nome,  <br>
+                    idade,  <br>
+                    cidade: 'Rio do Sul',<br>
+                };<br>
+            </code>
+        </div>
+    </div>
+    <br>
+    <script src="./js/modulo1.js"></script>
+</body>
+</html>

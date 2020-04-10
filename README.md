@@ -15,6 +15,6 @@
 - Pasta Aplicação ou Desafios: 
 
 ```javascript
-    npm install
+    yarn install
     yarn dev // http://localhost:8080/
 ```

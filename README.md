@@ -8,7 +8,6 @@
 
 ## Necessário ter instalado:
 - Node.js + NPM
-- Postman
 
 ## Executando:
 
